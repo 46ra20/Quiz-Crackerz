@@ -10,8 +10,8 @@ const Statistics = () => {
     ];
     return (
         <div className='container mx-auto mt-5 py-3'>
-            <div className='border-bottom mt-5'>
-                <h3 className='text-center pb-3'>Language use this project.</h3>
+            <div className='border-bottom'>
+                <h3 className='text-center pb-3'>The language used in this project is.</h3>
             </div>
             <VictoryChart
                 domainPadding={20}
