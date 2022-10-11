@@ -29,7 +29,7 @@ const Quiz = () => {
             });
         }
         else if(isRight === 'false'){
-            toast.warn("Wrong Answer", {
+            toast.error("Wrong Answer", {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,

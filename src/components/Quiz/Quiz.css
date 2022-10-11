@@ -7,8 +7,12 @@
 }
 
 .wrong{
-    background-color: rgba(255, 0, 0, 0.815);
+    /* background-color: rgba(255, 0, 0, 0.815); */
 }
 .cHover:hover{
     background-color: rgba(206, 185, 185, 0.39);
+}
+
+.cuHover:hover{
+    background-color: rgba(128, 128, 128, 0.212);
 }

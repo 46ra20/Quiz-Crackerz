@@ -8,7 +8,7 @@ const Menubar = () => {
     return (
         <Navbar bg="primary" variant="dark" className='shadow' fixed="top">
             <Container>
-                <Navbar.Brand href="/">JSRN e-learning</Navbar.Brand>
+                <Navbar.Brand>JSRN e-learning</Navbar.Brand>
                 <Nav className="ms-auto">
                     <NavLink to={'/topic'} className="nav-link">Topic</NavLink>
                     <NavLink to={'/statistics'} className="nav-link">Statistics</NavLink>
