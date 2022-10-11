@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Blog from './Blog/Blog';
+import Blog from './components/Blog/Blog';
 import Error from './components/Error/Error';
 import Layout from './components/Layout/Layout';
 import Statistics from './components/Statistics/Statistics';
 import Topic from './components/Topic/Topic';
-import logo from './logo.svg';
-import Quiz from './Quiz/Quiz';
+import Quiz from './components/Quiz/Quiz';
 
 const createRoute = createBrowserRouter([
   { 
