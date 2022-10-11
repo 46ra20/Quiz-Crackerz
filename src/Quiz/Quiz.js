@@ -1,6 +1,8 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import './Quiz.css'
+import QuizOption from './QuizOption';
 
 const Quiz = () => {
     const getQuiz = useLoaderData();
@@ -18,7 +20,7 @@ const Quiz = () => {
                         <Card.Body className='gap-4'>
                             <Row>
                                 {
-                                    quiz.options.map(option => <Col className='p-3 border rounded m-2 mx-auto' xs={12} md={6} lg={5} style={{cursor:'pointer'}}><li>{option}</li></Col>)
+                                    quiz.options.map(option => <QuizOption option={option} correctAnswer={quiz.correctAnswer}></QuizOption>)
                                 }
                             </Row>
                         </Card.Body>
