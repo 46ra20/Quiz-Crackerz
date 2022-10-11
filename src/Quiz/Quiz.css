@@ -9,3 +9,6 @@
 .wrong{
     background-color: rgba(255, 0, 0, 0.815);
 }
+.cHover:hover{
+    background-color: rgba(206, 185, 185, 0.39);
+}

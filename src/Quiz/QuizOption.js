@@ -7,11 +7,11 @@ const QuizOption = ({ option, correctAnswer,notify }) => {
     const getAnswer = (option, correctAnswer) => {
         if (option === correctAnswer) {
             setAns(true);
-            notify(true);
+            notify('true');
         }
         else {
             setAns(false);
-            notify(false)
+            notify('false')
         }
     }
     return (
