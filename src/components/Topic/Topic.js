@@ -6,7 +6,7 @@ const Topic = () => {
     const getData = useLoaderData();
     const {data} = getData;
     return (
-        <div className='container d-flex my-5 mx-auto'>
+        <div className='container d-flex my-5 py-3 mx-auto'>
             {
                 data.map(topic => <SingleTopic topic={topic} key={topic.id}></SingleTopic>)
             }

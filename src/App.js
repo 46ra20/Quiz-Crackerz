@@ -14,6 +14,11 @@ const createRoute = createBrowserRouter([
     errorElement:<Error></Error>,
     children:[
       {
+        path:'/',
+        loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),
+        element: <Topic></Topic>,
+      },
+      {
         path:'/topic',
         loader: async () => fetch('https://openapi.programming-hero.com/api/quiz'),
         element:<Topic></Topic>,
