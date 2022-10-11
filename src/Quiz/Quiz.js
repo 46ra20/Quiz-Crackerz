@@ -48,7 +48,7 @@ const Quiz = () => {
     return (
         <div className='my=5 py-5 container' key={id}>
             <div className='border-bottom my-3'>
-                <h2 className='text-center'>Question About {name}</h2>
+                <h2 className='text-center'>Question About {name}.</h2>
                 <h2 className='text-center'>Are you Ready??</h2>
             </div>
             {
