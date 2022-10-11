@@ -3,6 +3,9 @@ import { Card, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import './Quiz.css'
 import QuizOption from './QuizOption';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Quiz = () => {
     const getQuiz = useLoaderData();
@@ -11,6 +14,33 @@ const Quiz = () => {
         const removeFirstTag = value.replace('<p>','');
         return removeFirstTag.replace('</p>','');
     }
+    const notify = (isRight) => {
+        if(isRight){
+            toast.success("Wow, Right Answer!!!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else{
+            toast.warn("Wrong Answer", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+    };
+
     return (
         <div className='my=5 py-5 container' key={id}>
             <div className='border-bottom my-3'>
@@ -24,13 +54,14 @@ const Quiz = () => {
                         <Card.Body className='gap-4'>
                             <Row>
                                 {
-                                    quiz.options.map(option => <QuizOption option={option} correctAnswer={quiz.correctAnswer} key={option.id}></QuizOption>)
+                                    quiz.options.map(option => <QuizOption option={option} correctAnswer={quiz.correctAnswer} key={option.id} notify={notify}></QuizOption>)
                                 }
                             </Row>
                         </Card.Body>
                     </Card>
                 )
             }
+            <ToastContainer />
         </div>
     );
 };
