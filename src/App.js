@@ -1,24 +1,35 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Blog from './Blog/Blog';
+import Error from './components/Error/Error';
+import Layout from './components/Layout/Layout';
+import Statistics from './components/Statistics/Statistics';
+import Topic from './components/Topic/Topic';
 import logo from './logo.svg';
-import './App.css';
+import Quiz from './Quiz/Quiz';
+
+const createRoute = createBrowserRouter([
+  { 
+    path: '/',
+    element:<Layout></Layout>,
+    errorElement:<Error></Error>,
+    children:[
+      {path:'/topic',element:<Topic></Topic>},
+      {path:'/statistics',element:<Statistics></Statistics>},
+      {path:'/blog',element:<Blog></Blog>},
+      {
+        path:'/topic/quiz/:quidID',
+        loader: async({params}) => (''),
+        element:<Quiz></Quiz>
+      }
+    ]
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={createRoute}>
+
+    </RouterProvider>
   );
 }
 
