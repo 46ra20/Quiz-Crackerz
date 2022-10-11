@@ -7,6 +7,10 @@ import QuizOption from './QuizOption';
 const Quiz = () => {
     const getQuiz = useLoaderData();
     const { questions,id,name } = getQuiz.data;
+    const replaceText = (value)=>{
+        const removeFirstTag = value.replace('<p>','');
+        return removeFirstTag.replace('</p>','');
+    }
     return (
         <div className='my=5 py-5 container' key={id}>
             <div className='border-bottom my-3'>
@@ -16,11 +20,11 @@ const Quiz = () => {
             {
                 questions.map(quiz =>
                     <Card border="primary" className='d-grid col-lg-8 mx-auto my-4 shadow' key={quiz.id}>
-                        <Card.Header className='fs-5'>Question:- {quiz.question}</Card.Header>
+                        <Card.Header className='fs-5'>Question:- {replaceText(quiz.question)}</Card.Header>
                         <Card.Body className='gap-4'>
                             <Row>
                                 {
-                                    quiz.options.map(option => <QuizOption option={option} correctAnswer={quiz.correctAnswer}></QuizOption>)
+                                    quiz.options.map(option => <QuizOption option={option} correctAnswer={quiz.correctAnswer} key={option.id}></QuizOption>)
                                 }
                             </Row>
                         </Card.Body>
