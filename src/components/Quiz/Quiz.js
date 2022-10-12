@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
-import './Quiz.css'
-import { AiFillEye } from 'react-icons/ai'
-import QuizOption from './QuizOption';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Card, Row } from 'react-bootstrap';
+import { AiFillEye } from 'react-icons/ai'
+import QuizOption from './QuizOption';
+import './Quiz.css'
 
 
 const Quiz = () => {
@@ -56,7 +56,7 @@ const Quiz = () => {
                     <Card border="primary" className='d-grid col-lg-8 mx-auto my-4 shadow' key={quiz.id}>
                         <Card.Header className='fs-5 d-flex justify-content-between align-items-center'>
                             <span>Question:- {replaceText(quiz.question)}</span>
-                            <span style={{ cursor: 'pointer' }} title="Show Right Answer" className='border px-3 pb-1 rounded cHover' onClick={()=>notify(quiz.correctAnswer)}><AiFillEye></AiFillEye></span>
+                            <span style={{ cursor: 'pointer' }} title="Show Right Answer" className='border px-3 pb-1 rounded cHover' onClick={() => notify(quiz.correctAnswer)}><AiFillEye></AiFillEye></span>
                         </Card.Header>
                         <Card.Body className='gap-4'>
                             <Row>
@@ -66,7 +66,7 @@ const Quiz = () => {
                             </Row>
                         </Card.Body>
                     </Card>
-                )
+                    )
             }
             <ToastContainer />
         </div>

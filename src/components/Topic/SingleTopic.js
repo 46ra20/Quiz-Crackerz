@@ -7,9 +7,10 @@ const SingleTopic = ({topic}) => {
     return (
         <Card style={{ width: '18rem'}} key={topic.id} className='w-100 mx-auto mx-md-2 my-2'>
             <Card.Img variant="top" src={topic.logo} style={{backgroundColor:'gray'}} />
-            <Card.Body className='d-flex justify-content-between align-items-center'>
+            <Card.Body>
                 <Card.Title>{topic.name}</Card.Title>
-                <Link to={`/topic/quiz/${topic.id}`}><Button variant="primary">Quiz</Button></Link>
+                <Card.Text>Total Quiz: {topic.total}</Card.Text>
+                <Link to={`/topic/quiz/${topic.id}`}><Button variant="primary">Start Quiz</Button></Link>
             </Card.Body>
         </Card>
     );
